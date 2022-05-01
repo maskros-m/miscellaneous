@@ -59,3 +59,38 @@ int main()
     // all three queues
     boilingPoint.dispatch();
 }
+
+/* OUTPUT:
+Timer has been set to 25
+Boiling point of 121 degrees has been reached
+Pressure has reached 30
+Timer has been set to 25
+There is 25 minutes left
+There is 24 minutes left
+There is 23 minutes left
+There is 22 minutes left
+There is 21 minutes left
+There is 20 minutes left
+There is 19 minutes left
+There is 18 minutes left
+There is 17 minutes left
+There is 16 minutes left
+There is 15 minutes left
+There is 14 minutes left
+There is 13 minutes left
+There is 12 minutes left
+There is 11 minutes left
+There is 10 minutes left
+There is 9 minutes left
+There is 8 minutes left
+There is 7 minutes left
+There is 6 minutes left
+There is 5 minutes left
+There is 4 minutes left
+There is 3 minutes left
+There is 2 minutes left
+There is 1 minutes left
+There is 0 minutes left
+Food is ready.
+- What is "Timer has been set to 25" doing way up there?
+*/
