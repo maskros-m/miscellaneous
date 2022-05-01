@@ -12,6 +12,7 @@ void enoughPressure (int psi) {
         wait_us(100000);
         if (i == psi)
             printf("Pressure has reached %d\n", i);
+            led2 = !led2;
     }
 }
 
@@ -30,6 +31,7 @@ int setTimer (int starting_value) {
 
 void countdown (int countdown_value) {
     for (int i = countdown_value; i >= 0; i--) {
+        led = !led;
         wait_us(100000);
         printf("There are %d minutes left\n", i);
         if (i == 0)
@@ -65,32 +67,32 @@ Timer has been set to 25
 Boiling point of 121 degrees has been reached
 Pressure has reached 30
 Timer has been set to 25
-There is 25 minutes left
-There is 24 minutes left
-There is 23 minutes left
-There is 22 minutes left
-There is 21 minutes left
-There is 20 minutes left
-There is 19 minutes left
-There is 18 minutes left
-There is 17 minutes left
-There is 16 minutes left
-There is 15 minutes left
-There is 14 minutes left
-There is 13 minutes left
-There is 12 minutes left
-There is 11 minutes left
-There is 10 minutes left
-There is 9 minutes left
-There is 8 minutes left
-There is 7 minutes left
-There is 6 minutes left
-There is 5 minutes left
-There is 4 minutes left
-There is 3 minutes left
-There is 2 minutes left
-There is 1 minutes left
-There is 0 minutes left
+There are 25 minutes left
+There are 24 minutes left
+There are 23 minutes left
+There are 22 minutes left
+There are 21 minutes left
+There are 20 minutes left
+There are 19 minutes left
+There are 18 minutes left
+There are 17 minutes left
+There are 16 minutes left
+There are 15 minutes left
+There are 14 minutes left
+There are 13 minutes left
+There are 12 minutes left
+There are 11 minutes left
+There are 10 minutes left
+There are 9 minutes left
+There are 8 minutes left
+There are 7 minutes left
+There are 6 minutes left
+There are 5 minutes left
+There are 4 minutes left
+There are 3 minutes left
+There are 2 minutes left
+There are 1 minutes left
+There are 0 minutes left
 Food is ready.
 - What is "Timer has been set to 25" doing way up there?
 */
