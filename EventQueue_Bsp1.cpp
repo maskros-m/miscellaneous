@@ -31,7 +31,7 @@ int setTimer (int starting_value) {
 void countdown (int countdown_value) {
     for (int i = countdown_value; i >= 0; i--) {
         wait_us(100000);
-        printf("There is %d minutes left\n", i);
+        printf("There are %d minutes left\n", i);
         if (i == 0)
             printf("Food is ready.\n");
     }
