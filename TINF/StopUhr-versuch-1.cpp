@@ -14,7 +14,7 @@ GLEICHZEITIG soll die LED4 mit einer Frequenz von genau 2Hz blinken, ohne von de
 #include "mbed.h"
 
 DigitalOut led1(LED1), led2(LED2), led3(LED3), led4(LED4);
-DigitalIn ctrlBtn(p15), resetBtn(p12);
+DigitalIn ctrlBtn(p15), resetBtn(p12); // should be InterruptIn, which registers only when a falling edge is detected.
 
 Timer stopwatch;
 int counter = 0;
