@@ -11,3 +11,57 @@ GLEICHZEITIG soll die LED4 mit einer Frequenz von genau 2Hz blinken, ohne von de
 
 *************************************************/
 
+#include "mbed.h"
+
+DigitalOut led1(LED1), led2(LED2), led3(LED3), led4(LED4);
+DigitalIn ctrlBtn(p15), resetBtn(p12);
+
+Timer stopwatch;
+int counter = 0;
+
+void startTimer() {
+    stopwatch.start();
+    // printf("Button has been pressed %d times\n", counter);
+    led1 = 1;
+    led2 = 0;
+    led3 = 0;
+}
+
+void stopTimer() {
+    stopwatch.stop();
+    printf("Elapsed time since last session: %.2f seconds\n", (double) stopwatch.read_ms() / 1000);
+    led1 = 0;
+    led2 = 1;
+    led3 = 0;
+}
+
+void resetTimer() {
+    stopwatch.stop();
+    stopwatch.reset();
+    printf("Stopwatch reset.\nCurrent time: %.2f seconds\n", (double) stopwatch.read_ms() / 1000);
+    led3 = 1;
+    led1 = 0;
+    led2 = 0;
+}
+
+int main()
+{
+    while (true) {
+        if (counter > 1 && ctrlBtn == 0) {
+            stopTimer();
+            counter = 0;
+        }
+        if (ctrlBtn == 1 && counter == 0) {
+            printf("Start counting time\n");
+        }
+        if (ctrlBtn == 1) {
+            ++counter;
+            startTimer();
+        }
+        if (resetBtn == 1) {
+            resetTimer();
+        }    
+        led4 = !led4;
+        wait_us(500000);    
+    }
+}
